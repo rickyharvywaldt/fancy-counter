@@ -1,3 +1,17 @@
+import { useState } from "react";
+import Count from "./Count";
+import CountButtons from "./CountButtons";
+import ResetButton from "./ResetButton";
+import Title from "./Title";
+
 export default function Card() {
-  return <div>Card</div>;
+  const [count, setCount] = useState(10);
+  return (
+    <div className="card">
+      <Title />
+      <Count count={count} />
+      <ResetButton setCount={setCount} />
+      <CountButtons setCount={setCount} />
+    </div>
+  );
 }
